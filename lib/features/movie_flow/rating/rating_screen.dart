@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:movie_recommandation_app/core/constants.dart';
 import 'package:movie_recommandation_app/core/widgets/primary_button.dart';
 import 'package:movie_recommandation_app/features/movie_flow/movie_flow_controller.dart';
+import 'package:movie_recommandation_app/features/movie_flow/navigation_controller.dart';
 
 class RatingScreen extends ConsumerWidget {
   const RatingScreen({
@@ -16,7 +17,7 @@ class RatingScreen extends ConsumerWidget {
       appBar: AppBar(
         leading: BackButton(
           onPressed:
-              ref.read(movieFlowControllerProvider.notifier).previousPage,
+              ref.read(navigationControllerProvider.notifier).previousPage,
         ),
       ),
       body: Center(
@@ -58,7 +59,7 @@ class RatingScreen extends ConsumerWidget {
             const Spacer(),
             PrimaryButton(
               onPressed:
-                  ref.read(movieFlowControllerProvider.notifier).nextPage,
+                  ref.read(navigationControllerProvider.notifier).nextPage,
               text: 'Yes, please',
             ),
             const SizedBox(height: kMediumSpacing),

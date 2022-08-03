@@ -25,14 +25,12 @@ const genresMock = [
 
 @immutable
 class MovieFlowState {
-  final PageController pageController;
   final int rating;
   final int yearsBack;
   final List<Genre> genres;
   final Movie movie;
 
   const MovieFlowState({
-    required this.pageController,
     this.movie = movieMock,
     this.genres = genresMock,
     this.rating = 5,
@@ -40,14 +38,12 @@ class MovieFlowState {
   });
 
   MovieFlowState copyWith({
-    PageController? pageController,
     int? rating,
     int? yearsBack,
     List<Genre>? genres,
     Movie? movie,
   }) {
     return MovieFlowState(
-      pageController: pageController ?? this.pageController,
       rating: rating ?? this.rating,
       yearsBack: yearsBack ?? this.yearsBack,
       genres: genres ?? this.genres,
@@ -60,7 +56,6 @@ class MovieFlowState {
     if (identical(this, other)) return true;
 
     return other is MovieFlowState &&
-        other.pageController == pageController &&
         other.genres == genres &&
         other.movie == movie &&
         other.rating == rating &&
@@ -69,8 +64,7 @@ class MovieFlowState {
 
   @override
   int get hashCode {
-    return pageController.hashCode ^
-        rating.hashCode ^
+    return rating.hashCode ^
         yearsBack.hashCode ^
         genres.hashCode ^
         movie.hashCode;

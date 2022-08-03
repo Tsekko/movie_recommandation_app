@@ -4,6 +4,7 @@ import 'package:movie_recommandation_app/core/constants.dart';
 import 'package:movie_recommandation_app/core/widgets/primary_button.dart';
 import 'package:movie_recommandation_app/features/movie_flow/genre/list_card.dart';
 import 'package:movie_recommandation_app/features/movie_flow/movie_flow_controller.dart';
+import 'package:movie_recommandation_app/features/movie_flow/navigation_controller.dart';
 
 class GenreScreen extends ConsumerWidget {
   const GenreScreen({
@@ -17,7 +18,7 @@ class GenreScreen extends ConsumerWidget {
       appBar: AppBar(
         leading: BackButton(
           onPressed:
-              ref.read(movieFlowControllerProvider.notifier).previousPage,
+              ref.read(navigationControllerProvider.notifier).previousPage,
         ),
       ),
       body: Center(
@@ -48,7 +49,7 @@ class GenreScreen extends ConsumerWidget {
                     ref.watch(movieFlowControllerProvider).genres.length),
           ),
           PrimaryButton(
-            onPressed: ref.read(movieFlowControllerProvider.notifier).nextPage,
+            onPressed: ref.read(navigationControllerProvider.notifier).nextPage,
             text: 'Continue',
           ),
           const SizedBox(height: kMediumSpacing),
