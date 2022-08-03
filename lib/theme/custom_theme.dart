@@ -50,7 +50,7 @@ class CustomTheme {
           ),
       textButtonTheme: TextButtonThemeData(
         style: TextButton.styleFrom(
-          backgroundColor: Palette.red500,
+          backgroundColor: Palette.blue500,
         ),
       ),
     );

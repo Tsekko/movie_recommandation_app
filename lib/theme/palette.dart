@@ -11,4 +11,5 @@ class Palette {
   static const Color red700 = Color(0xff800d1b);
   static const Color red800 = Color(0xff4d0810);
   static const Color red900 = Color(0xff1a0305);
+  static const Color blue500 = Color(0xff42bbd6);
 }
